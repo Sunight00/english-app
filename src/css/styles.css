@@ -2,15 +2,18 @@
     margin: 0;
     padding: 0;
 }
-
+body{
+  overflow-y: hidden;
+}
 
 .loadScreen {
-
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f0f0f0; /* optional background */
+  background: #f0f0f0;
+   /* optional background */
+  overflow-y: hidden;
 }
 
 #loading {
@@ -54,7 +57,11 @@
   100% { transform: rotate(360deg); }
 }
 
-
+.loadingText{
+    @media (max-width: 412px){
+        font-size:1rem;
+    }  
+}
 
 .dot-loader {
   display: flex;
@@ -92,7 +99,7 @@
 .intro{
     position: absolute;
     top:90vh;
-    @media (max-width: 360px){
+    @media (max-width: 425px){
         font-size:1rem;
     }
 }
