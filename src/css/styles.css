@@ -5,6 +5,14 @@
 body{
   overflow-y: hidden;
 }
+#logo{
+  width: 5%;
+}
+
+
+
+
+
 
 .loadScreen {
   width: 100%;
@@ -12,7 +20,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-   background-color: rgba(128, 0, 128, 0.473);
+  background-color: rgb(2, 2, 26);
    /* optional background */
   overflow-y: hidden;
 }
@@ -26,7 +34,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
-s
+
 
 .spinner {
   width: 150px;
@@ -53,7 +61,7 @@ s
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 24px;
-  color: #333; /* text color */
+  color: #4e4848; /* text color */
 
    @media (max-width: 600px){
         font-size:1rem;
