@@ -9,7 +9,6 @@ function loadScreen(){
         <h2 class="loadingText dot-loader">Loading 
         <span></span><span></span><span></span>
         </h2>
-        <h1 class="intro">SUNIGHT GRAMMARLY</h1>
     </div>
     ` 
 }
