@@ -22,7 +22,7 @@ load.addEventListener(onload,loadScreen())
 
 setTimeout(endLoadScreen,4000)
  function endLoadScreen(){
-    window.location.href ="./src/pages/home.html"
+    window.location.href ="home/"
     
     /*document.querySelector('.loadScreen').remove()
     homePage()
