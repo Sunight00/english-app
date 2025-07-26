@@ -1,4 +1,4 @@
-import image from '../public/images/b.svg';
+import image from '/images/b.svg';
 const load = document.querySelector('.load');
 let t = true;
 function loadScreen(){
@@ -8,7 +8,6 @@ function loadScreen(){
     <div class="loadScreen">
         <img id='loadImage' src="${image}" alt="Loading..." />
         <div id="loading"></div>
-        <div class="spinner"></div>
         <h2 class="loadingText dot-loader">Loading 
         <span></span><span></span><span></span>
         </h2>
