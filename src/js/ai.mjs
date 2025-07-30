@@ -1,6 +1,20 @@
 import OpenAI from "openai";
 const apiKey = import.meta.env.VITE_API_KEY;
 
+export default class openai {
+  constructor(){
+    this.openai = new OpenAI({apiKey: apiKey, dangerouslyAllowBrowser: true});
+  }
+  newWord(){
+    const response = this.openai.responses.create({model: "gpt-4o-mini",input: `output a single word`,store: true,});
+
+  }
+
+
+}
+
+
+
 function grammar (){
 const openai = new OpenAI({
   apiKey: apiKey,

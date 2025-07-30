@@ -26,5 +26,4 @@ setTimeout(endLoadScreen,4000)
     /*document.querySelector('.loadScreen').remove()
     homePage()
     t = false;*/
-    homePage()
  }
