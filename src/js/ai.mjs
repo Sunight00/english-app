@@ -1,21 +1,25 @@
 import OpenAI from "openai";
 const apiKey = import.meta.env.VITE_API_KEY;
 
-export default class openai {
+export default class openAiClient {
   constructor(){
     this.openai = new OpenAI({apiKey: apiKey, dangerouslyAllowBrowser: true});
   }
-  newWord(){
-    const response = this.openai.responses.create({model: "gpt-4o-mini",input: `output a single word`,store: true,});
 
+  async newWord(){
+      const response = await this.openai.responses.create({
+        model: "gpt-4o-mini",
+        input: `output a single word without a fullstop`,
+        store: true,
+      });
+      
+      return response
   }
-
-
 }
 
 
-
-function grammar (){
+/*
+function grammar (){  
 const openai = new OpenAI({
   apiKey: apiKey,
   dangerouslyAllowBrowser: true
@@ -32,4 +36,4 @@ const response = openai.responses.create({
 
 response.then((result) => document.getElementById("q").innerHTML = result.output_text);}
 
-grammar();
+grammar();*/
