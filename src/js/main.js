@@ -7,4 +7,7 @@ const x = new dictionary()
 const newWord = ai.newWord()
 
     //document.getElementById("q").innerHTML = ai.newWord()//
-    newWord.then((result) => document.getElementById("q").innerHTML = result.output_text);
+   // newWord.then((result) => document.getElementById("q").innerHTML = result.output_text);
+
+
+ x.getWordInfo('happy')
