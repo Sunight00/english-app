@@ -10,4 +10,4 @@ const newWord = ai.newWord()
    newWord.then((result) => document.getElementById("q").innerHTML = result.output_text);
 
 
- x.getWordInfo('dog')
+ x.getWordInfo('house')
