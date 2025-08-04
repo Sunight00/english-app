@@ -15,8 +15,9 @@ export default class dictionary{
         let data = object[0]
         console.log(data.word)
         document.getElementById("word").innerHTML = data.word
-        document.getElementById("phonetic").innerHTML = data.phonetic
-        
+        document.getElementById("phonetic").innerHTML = data.phonetic || 'phonetic not available'
+        document.getElementById('audio').src = data.phonetics[0].audio || data.phonetics[1].audio
+        document.getElementById("definition").innerHTML = `<br>${data.meanings[0].partOfSpeech}: ${data.meanings[0].definitions[0].definition}`
 
     }
 
