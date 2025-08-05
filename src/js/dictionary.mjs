@@ -33,7 +33,12 @@ export default class dictionary{
             document.getElementById("word").innerHTML = data.word
             document.getElementById("definition").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;  
         }
-        this.storeWords(word)
+
+        const button = document.getElementById("save");
+        button.addEventListener("click", () => {
+            this.storeWords(word);
+        });
+        
         this.getStoredWords()
     }
 
