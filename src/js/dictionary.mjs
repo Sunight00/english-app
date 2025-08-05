@@ -40,6 +40,7 @@ export default class dictionary{
             //call the storeWords method to save the word
             this.storeWords(word);
             window.location.reload();
+            alert("Word saved successfully!");
         });
         
         this.getStoredWords()
