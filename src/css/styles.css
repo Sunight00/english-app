@@ -93,3 +93,29 @@
   padding: 0.2rem 1rem;
     cursor: pointer;
 }
+
+
+
+.card{
+  flex: 0 0 auto; /* Prevent shrinking */
+  width: 300px;   /* Fixed width */
+  min-height: 100px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  margin: 0.2rem;
+  border-radius: 9px;
+}
+
+#list{
+  display: flex;
+  gap: 1rem;
+}

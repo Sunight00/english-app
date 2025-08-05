@@ -105,7 +105,7 @@ export default class dictionary{
             card.appendChild(definition);
 
             const search = document.createElement("p");
-            search.innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${Word}" target='_blank'>Search</a>`;
+            search.innerHTML = `For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${Word}" target='_blank'>Search</a>`;
             card.appendChild(search);
 
             listContainer.appendChild(card);
