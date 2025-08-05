@@ -33,7 +33,21 @@ export default class dictionary{
             document.getElementById("word").innerHTML = data.word
             document.getElementById("definition").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;  
         }
+        this.storeWords(word)
     }
+
+    async storeWords(word) {
+        // Get existing words or default to an empty array
+        let words = JSON.parse(localStorage.getItem("words")) || [];
+        // Add the new word
+        words.push(word);
+        // Save updated array back to localStorage
+        localStorage.setItem("words", JSON.stringify(words));
+    }
+
+
+    
+
 
 }
 
