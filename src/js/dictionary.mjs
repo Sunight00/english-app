@@ -34,8 +34,10 @@ export default class dictionary{
             document.getElementById("definition").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;  
         }
 
+        // Add event listener to the save button
         const button = document.getElementById("save");
         button.addEventListener("click", () => {
+            //call the storeWords method to save the word
             this.storeWords(word);
         });
         
@@ -69,8 +71,6 @@ export default class dictionary{
                 word.innerHTML = `Word: ${data.word}`;
                 card.appendChild(word);
                 document.getElementById("list").appendChild(card)
-            
-
             }
             catch (err) {
                 console.error("Error creating card:", err);
@@ -102,6 +102,10 @@ export default class dictionary{
             definition.innerHTML = `Definition: ${definitionText}`;
             card.appendChild(definition);
 
+            const search = document.createElement("p");
+            search.innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${Word}" target='_blank'>Search</a>`;
+            card.appendChild(search);
+            
             listContainer.appendChild(card);
         } catch (err) {
             console.error("Error creating card:", err);
