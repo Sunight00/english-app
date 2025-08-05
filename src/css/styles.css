@@ -113,9 +113,14 @@
   border: 1px solid #ccc;
   margin: 0.2rem;
   border-radius: 9px;
+    & h5 {
+    position: fixed;
+    }
 }
 
 #list{
+  margin-top: 2.5rem;
   display: flex;
   gap: 1rem;
+
 }
