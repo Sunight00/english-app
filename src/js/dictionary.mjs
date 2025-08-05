@@ -34,9 +34,10 @@ export default class dictionary{
             document.getElementById("definition").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;  
         }
         this.storeWords(word)
+        this.getStoredWords()
     }
 
-    async storeWords(word) {
+    storeWords(word) {
         // Get existing words or default to an empty array
         let words = JSON.parse(localStorage.getItem("words")) || [];
         // Add the new word
@@ -46,8 +47,62 @@ export default class dictionary{
     }
 
 
-    
+    /*async getStoredWords() {
+        let words = JSON.parse(localStorage.getItem("words")) || [];
+        const listContainer = document.getElementById("list");
+        listContainer.innerHTML = ""; // Clear previous content
 
+        words.forEach((Word) => {
+            const object = await this.getWord(Word)
+            let data = object[0]
+            const card = document.createElement("div");
+            card.className = "card";
+            const word = document.createElement("p");
+            const phonetic = document.createElement("p");
+            const definition = document.createElement("p");
+            try {
+                word.innerHTML = `Word: ${data.word}`;
+                card.appendChild(word);
+                document.getElementById("list").appendChild(card)
+            
+
+            }
+            catch (err) {
+                console.error("Error creating card:", err);
+        }})
+    }*/
+   async getStoredWords() {
+    let words = JSON.parse(localStorage.getItem("words")) || [];
+    const listContainer = document.getElementById("list");
+    listContainer.innerHTML = ""; // Clear previous content
+
+    for (const Word of words) {
+        try {
+            const object = await this.getWord(Word);
+            const data = object[0];
+
+            const card = document.createElement("div");
+            card.className = "card";
+
+            const word = document.createElement("p");
+            word.innerHTML = `Word: ${data.word}`;
+            card.appendChild(word);
+
+            const phonetic = document.createElement("p");
+            phonetic.innerHTML = `Phonetic: ${data.phonetic || "N/A"}`;
+            card.appendChild(phonetic);
+
+            const definition = document.createElement("p");
+            const definitionText = data.meanings?.[0]?.definitions?.[0]?.definition || "No definition available";
+            definition.innerHTML = `Definition: ${definitionText}`;
+            card.appendChild(definition);
+
+            listContainer.appendChild(card);
+        } catch (err) {
+            console.error("Error creating card:", err);
+        }
+    }
+}
 
 }
 

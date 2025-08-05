@@ -2,9 +2,9 @@
     margin: 0;
     padding: 0;
 }
-body{
+/*body{
   overflow-y: hidden;
-}
+}*/
 #logo{
   width: 5%;
 }
@@ -94,4 +94,3 @@ body{
     } 
 }
 
-  
