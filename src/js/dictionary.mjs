@@ -25,7 +25,7 @@ export default class dictionary{
         console.log(data.word)
         try{
             document.getElementById("word").innerHTML = data.word
-            document.getElementById("phonetic").innerHTML = data.phonetic || 'phonetic not available'
+            document.getElementById("phonetic").innerHTML = data.phonetic || '"N/A"'
             document.getElementById('audio').src = data.phonetics[0].audio || data.phonetics[1].audio
             document.getElementById("definition").innerHTML = `<br>${data.meanings[0].partOfSpeech}: ${data.meanings[0].definitions[0].definition} For more info <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;           
         }
@@ -39,6 +39,7 @@ export default class dictionary{
         button.addEventListener("click", () => {
             //call the storeWords method to save the word
             this.storeWords(word);
+            window.location.reload();
         });
         
         this.getStoredWords()
@@ -105,7 +106,7 @@ export default class dictionary{
             const search = document.createElement("p");
             search.innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${Word}" target='_blank'>Search</a>`;
             card.appendChild(search);
-            
+
             listContainer.appendChild(card);
         } catch (err) {
             console.error("Error creating card:", err);
