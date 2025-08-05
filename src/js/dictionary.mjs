@@ -23,10 +23,16 @@ export default class dictionary{
         const object= await this.getWord(word)
         let data = object[0]
         console.log(data.word)
-        document.getElementById("word").innerHTML = data.word
-        document.getElementById("phonetic").innerHTML = data.phonetic || 'phonetic not available'
-        document.getElementById('audio').src = data.phonetics[0].audio || data.phonetics[1].audio
-        document.getElementById("definition").innerHTML = `<br>${data.meanings[0].partOfSpeech}: ${data.meanings[0].definitions[0].definition} for more info <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>` 
+        try{
+            document.getElementById("word").innerHTML = data.word
+            document.getElementById("phonetic").innerHTML = data.phonetic || 'phonetic not available'
+            document.getElementById('audio').src = data.phonetics[0].audio || data.phonetics[1].audio
+            document.getElementById("definition").innerHTML = `<br>${data.meanings[0].partOfSpeech}: ${data.meanings[0].definitions[0].definition} For more info <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;           
+        }
+        catch(err){
+            document.getElementById("word").innerHTML = data.word
+            document.getElementById("definition").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;  
+        }
     }
 
 }
