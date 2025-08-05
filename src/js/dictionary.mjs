@@ -4,13 +4,19 @@ export default class dictionary{
         this.word = word
     }
 
+    async generateWord(){
+        const response = await fetch (`https://random-word-api.vercel.app/api?words=1`)
+        const object = await response.json()
+        return object[0]
+    }
     async getWord(word){
         const response = await fetch (`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         const object = await response.json()
         return object
     }
 
-    async getWordInfo(word){
+    async getWordInfo(){
+        const word = await this.generateWord()
         const object= await this.getWord(word)
         let data = object[0]
         console.log(data.word)
