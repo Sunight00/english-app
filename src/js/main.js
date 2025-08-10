@@ -11,6 +11,4 @@ const x = new dictionary()
 
  x.getWordInfo()
 
-const date = Date();
-let today = date.gettime().slice(0, 10);
-console.log(today);
+

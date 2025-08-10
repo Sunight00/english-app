@@ -24,18 +24,18 @@ export default class dictionary{
         let data = object[0]
         console.log(data.word)
         try{
-            document.getElementById("word").innerHTML = data.word
-            document.getElementById("phonetic").innerHTML = data.phonetic || '"N/A"'
-            document.getElementById('audio').src = data.phonetics[0].audio || data.phonetics[1].audio
-            document.getElementById("definition").innerHTML = `<br>${data.meanings[0].partOfSpeech}: ${data.meanings[0].definitions[0].definition} For more info <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;           
+            document.querySelector(".word").innerHTML = data.word
+            document.querySelector(".phonetic").innerHTML = data.phonetic || '"N/A"'
+            document.querySelector('.audio').src = data.phonetics[0].audio || data.phonetics[1].audio
+            document.querySelector(".definition").innerHTML = `<br>${data.meanings[0].partOfSpeech}: ${data.meanings[0].definitions[0].definition} For more info <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;           
         }
         catch(err){
-            document.getElementById("word").innerHTML = data.word
-            document.getElementById("definition").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;  
+            document.querySelector(".word").innerHTML = data.word
+            document.querySelector(".definition").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;  
         }
 
         // Add event listener to the save button
-        const button = document.getElementById("save");
+        const button = document.querySelector(".save");
         button.addEventListener("click", () => {
             //call the storeWords method to save the word
             this.storeWords(word);
@@ -58,7 +58,7 @@ export default class dictionary{
 
     /*async getStoredWords() {
         let words = JSON.parse(localStorage.getItem("words")) || [];
-        const listContainer = document.getElementById("list");
+        const listContainer = document.querySelector("list");
         listContainer.innerHTML = ""; // Clear previous content
 
         words.forEach((Word) => {
@@ -72,7 +72,7 @@ export default class dictionary{
             try {
                 word.innerHTML = `Word: ${data.word}`;
                 card.appendChild(word);
-                document.getElementById("list").appendChild(card)
+                document.querySelector("list").appendChild(card)
             }
             catch (err) {
                 console.error("Error creating card:", err);
@@ -80,7 +80,7 @@ export default class dictionary{
     }*/
    async getStoredWords() {
     let words = JSON.parse(localStorage.getItem("words")) || [];
-    const listContainer = document.getElementById("list");
+    const listContainer = document.querySelector(".list");
     listContainer.innerHTML = ""; // Clear previous content
 
     for (const Word of words) {
