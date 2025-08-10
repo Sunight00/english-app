@@ -43,7 +43,7 @@ export default class dictionary{
             alert("Word saved successfully!");
         });
         
-        this.getStoredWords()
+        
     }
 
     storeWords(word) {
