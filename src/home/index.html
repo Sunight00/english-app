@@ -42,6 +42,21 @@
       </div>
     </nav>
     <main>
+      <div id="largeWord" >
+            <p>Word: <span id="word"></span></p>
+            <p>Phonetic: <span id="phonetic"></span></p>
+            <audio id="audio" controls>
+              <source type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Comprehensive definition: <span id="definition"></span></p>
+            <button id="save">Save</button>
+      </div>
+
+
+
+
+
       <section class="word">
         <div class="container mt-3">
           <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#demo">TODAY'S NEW WORD</button>
@@ -57,6 +72,8 @@
           </div>
         </div>
       </section>
+
+
       <h5>SAVED WORDS</h5>
       <div class="scroll-wrapper">
         <div id="list">

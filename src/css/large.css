@@ -2,4 +2,21 @@
   .container {
     display: none;
   }
+  #largeWord{
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 0.9rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    
+
+}
+
+#largeWord:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  transform: translateY(-4px);
+}
 }

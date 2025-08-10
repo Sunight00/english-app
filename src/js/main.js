@@ -10,3 +10,7 @@ const x = new dictionary()
    //newWord.then((result) => document.getElementById("q").innerHTML = result.output_text);
 
  x.getWordInfo()
+
+const date = Date();
+let today = date.gettime().slice(0, 10);
+console.log(today);
