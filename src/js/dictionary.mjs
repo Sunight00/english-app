@@ -52,17 +52,27 @@ export default class dictionary{
             window.location.reload();
             alert("Word saved successfully!");
         });
+        const butto = document.querySelector("#ss");
+        butto.addEventListener("click", () => {
+            //call the storeWords method to save the word
+            this.storeWords(word);
+            window.location.reload();
+            alert("Word saved successfully!");
+        });
         
         
     }
 
     storeWords(word) {
-        // Get existing words or default to an empty array
-        let words = JSON.parse(localStorage.getItem("words")) || [];
-        // Add the new word
+      let words = JSON.parse(localStorage.getItem("words")) || [];
+    let index = words.findIndex(w => w === word);
+
+    if (index !== -1) {
+        words[index] = word;
+    } else {
         words.push(word);
-        // Save updated array back to localStorage
-        localStorage.setItem("words", JSON.stringify(words));
+    }
+    localStorage.setItem("words", JSON.stringify(words));
     }
 
 

@@ -13,21 +13,19 @@ const words = new dictionary()
  words.getStoredWords()
 
 
-
-let date = new Date();
+//DAILY WORD UPDATE
+let date = new Date();  
 let currentDate = date.toISOString().split('T')[0];
 console.log(currentDate);
 
 function getDate(){
   return localStorage.getItem("date") || currentDate;
 }
-
 function setDate(){
   let date = new Date();
   let urrentDate = date.toISOString().split('T')[0];
   localStorage.setItem("date", urrentDate);
 }
-
 if (getDate() == currentDate) {
   const todayWord = localStorage.getItem("todayWord");
   console.log(todayWord);
