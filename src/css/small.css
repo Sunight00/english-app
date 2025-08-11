@@ -15,4 +15,13 @@
 #largeWord{
     display: none;
 }
+dialog {
+position: absolute; /* important! so iframe absolute is relative to dialog */
+  border: none;
+  width: 100vw;
+  height: auto;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}   
 }
