@@ -18,7 +18,7 @@ export default class dictionary{
     }
 
     //This Dom calls the generate and get word and and update DOM with the data
-    async getWordInfo(word){
+    async getWordInfo(word, x=''){
         //const word = await this.generateWord()
         const object= await this.getWord(word)
         let data = object[0]
@@ -26,22 +26,22 @@ export default class dictionary{
             document.querySelector(".word").innerHTML = data.word
             document.querySelector(".phonetic").innerHTML = data.phonetic || '"N/A"'
             document.querySelector('.audio').src = data.phonetics[0].audio || data.phonetics[1].audio
-            document.querySelector(".definition").innerHTML = `<br>${data.meanings[0].partOfSpeech}: ${data.meanings[0].definitions[0].definition} For more info <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;           
+            document.querySelector(".definition").innerHTML = `<br>${data.meanings[0].partOfSpeech}: ${data.meanings[0].definitions[0].definition} For more info <a href="https://dictionary.cambridge.org/dictionary/english/${x}" target='_blank'>Search</a>`;           
         }
         catch(err){
             document.querySelector(".word").innerHTML = data.word
-            document.querySelector(".definition").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;  
+            document.querySelector(".definition").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${x}" target='_blank'>Search</a>`;  
         }
 
         try{
             document.querySelector(".wor").innerHTML = data.word
             document.querySelector(".phoneti").innerHTML = data.phonetic || '"N/A"'
             document.querySelector('.audi').src = data.phonetics[0].audio || data.phonetics[1].audio
-            document.querySelector(".definitio").innerHTML = `<br>${data.meanings[0].partOfSpeech}: ${data.meanings[0].definitions[0].definition} For more info <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;           
+            document.querySelector(".definitio").innerHTML = `<br>${data.meanings[0].partOfSpeech}: ${data.meanings[0].definitions[0].definition} For more info <a href="https://dictionary.cambridge.org/dictionary/english/${x}" target='_blank'>Search</a>`;           
         }
         catch(err){
             document.querySelector(".wor").innerHTML = data.word
-            document.querySelector(".definitio").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;  
+            document.querySelector(".definitio").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${x}" target='_blank'>Search</a>`;  
         }
 
         // Add event listener to the save button
