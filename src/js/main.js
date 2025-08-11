@@ -9,7 +9,7 @@ const words = new dictionary()
     //document.getElementById("q").innerHTML = ai.newWord()//
    //newWord.then((result) => document.getElementById("q").innerHTML = result.output_text);
 
- words.getWordInfo()
+
  words.getStoredWords()
 
 
@@ -35,7 +35,6 @@ if (getDate() == currentDate) {
   words.getWordInfo(todayWord, todayWord);    
 }
 else {
-  
   const word = await words.generateWord()
   localStorage.setItem("todayWord",word);
   //const object= await words.getWord('happy')
