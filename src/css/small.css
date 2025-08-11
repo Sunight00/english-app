@@ -16,7 +16,7 @@
     display: none;
 }
 dialog {
-position: absolute; /* important! so iframe absolute is relative to dialog */
+position: absolute;
   border: none;
   width: 100vw;
   height: auto;

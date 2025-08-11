@@ -44,17 +44,15 @@ export default class dictionary{
             document.querySelector(".definitio").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${x}" target='_blank'>Search</a>`;  
         }
 
-        // Add event listener to the save button
+        
         const button = document.querySelector(".save");
         button.addEventListener("click", () => {
-            //call the storeWords method to save the word
             this.storeWords(word);
             window.location.reload();
             alert("Word saved successfully!");
         });
         const butto = document.querySelector("#ss");
         butto.addEventListener("click", () => {
-            //call the storeWords method to save the word
             this.storeWords(word);
             window.location.reload();
             alert("Word saved successfully!");
