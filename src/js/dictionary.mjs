@@ -34,6 +34,17 @@ export default class dictionary{
             document.querySelector(".definition").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;  
         }
 
+        try{
+            document.querySelector(".wor").innerHTML = data.word
+            document.querySelector(".phoneti").innerHTML = data.phonetic || '"N/A"'
+            document.querySelector('.audi').src = data.phonetics[0].audio || data.phonetics[1].audio
+            document.querySelector(".definitio").innerHTML = `<br>${data.meanings[0].partOfSpeech}: ${data.meanings[0].definitions[0].definition} For more info <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;           
+        }
+        catch(err){
+            document.querySelector(".wor").innerHTML = data.word
+            document.querySelector(".definitio").innerHTML = `<br>For more info: <a href="https://dictionary.cambridge.org/dictionary/english/${word}" target='_blank'>Search</a>`;  
+        }
+
         // Add event listener to the save button
         const button = document.querySelector(".save");
         button.addEventListener("click", () => {
