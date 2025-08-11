@@ -12,17 +12,40 @@ const words = new dictionary()
  words.getWordInfo()
  words.getStoredWords()
 
-let date = new Date();
+
+
+let date = new Date("2019-03-25");
 let currentDate = date.toISOString().split('T')[0];
 console.log(currentDate);
 
 function getDate(){
-  localStorage.getItem("date") || currentDate;
+  return localStorage.getItem("date") || currentDate;
 }
 
 function setDate(){
-  localStorage.setItem("date", currentDate);
+  let date = new Date("2017-03-25");
+  let urrentDate = date.toISOString().split('T')[0];
+  localStorage.setItem("date", urrentDate);
 }
-if (getDate() == currentDate) {
 
+if (getDate() == currentDate) {
+  const todayWord = localStorage.getItem("todayWord");
+  console.log(todayWord);
+  //const object= await words.getWord(todayWord)
+  words.getWordInfo(todayWord)    
 }
+else {
+  const word = await words.generateWord()
+  const object= await words.getWord(word)
+  words.getWordInfo(object)
+  setDate();
+}
+
+
+
+
+
+        
+
+
+

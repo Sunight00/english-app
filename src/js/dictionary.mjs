@@ -18,11 +18,10 @@ export default class dictionary{
     }
 
     //This Dom calls the generate and get word and and update DOM with the data
-    async getWordInfo(){
-        const word = await this.generateWord()
+    async getWordInfo(word){
+        //const word = await this.generateWord()
         const object= await this.getWord(word)
         let data = object[0]
-        console.log(data.word)
         try{
             document.querySelector(".word").innerHTML = data.word
             document.querySelector(".phonetic").innerHTML = data.phonetic || '"N/A"'
