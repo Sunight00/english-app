@@ -5,11 +5,19 @@
 /*body{
   overflow-y: hidden;
 }*/
-#logo{
-  width: 5%;
+:root{
+  --primary-color: #ffffff;
+  --secondary-color: #242323;
+  --accent : #40409c;
 }
 
 
+
+
+
+#logo{
+  width: 5%;
+}
 
 .loadScreen {
   width: 100%;
@@ -146,4 +154,11 @@ iframe {
   margin-top: 0.3rem;
   margin-right: 0.5rem;
   float: right;
+}
+
+footer{
+  width: 100%;
+  padding: 1rem 0 1rem 1rem;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
 }

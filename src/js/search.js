@@ -55,5 +55,5 @@ window.addEventListener("DOMContentLoaded", () => {
 function getParam() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    return urlParams.get("search") || "Main_Page"; // Default Wikipedia page if missing
+    return urlParams.get("search");
 }
