@@ -12,7 +12,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'src/index.html'), // entry file(s)
-        ma: resolve(__dirname, 'src/home/index.html'),
+        home: resolve(__dirname, 'src/home/index.html'),
+        explore: resolve(__dirname, 'src/explore/index.html'),
+        quiz: resolve(__dirname, 'src/quiz/index.html'),
       },
     },
   },
