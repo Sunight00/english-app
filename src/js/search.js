@@ -15,11 +15,8 @@ function createDialog() {
 
     dialog.innerHTML = `
     <button id="closeBtn">❌</button>
-        <iframe id="wikiFrame"
-            src="https://en.wikipedia.org/wiki/${getParam()}" 
-            title="Wikipedia Page"
-            style="border:none;">
-        </iframe>   
+        <iframe id="wikiFrame" src="https://en.wiktionary.org/wiki/${getParam()}"></iframe>
+   
     `;
     dialog.querySelector("#closeBtn").addEventListener("click", () => {
         closeDialog(dialog);

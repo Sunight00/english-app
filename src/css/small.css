@@ -19,8 +19,8 @@ dialog {
 position: absolute;
   border: none;
   width: 100vw;
-  height: auto;
-  top: 45%;
+  height: 75%;
+  top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
 }   

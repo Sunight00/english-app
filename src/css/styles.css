@@ -142,3 +142,8 @@ iframe {
 }
 
 
+#closeBtn{
+  margin-top: 0.3rem;
+  margin-right: 0.5rem;
+  float: right;
+}
