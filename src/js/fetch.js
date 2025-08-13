@@ -1,11 +1,12 @@
 async function youtube(){
-    const reponse = await ("/json/youtude.json");
-    if (!reponse.ok) {
-      throw new Error("Network response was not ok");
-    }
-    else {
-        console.log("JSON file loaded successfully");
-    }
+    const reponse = await fetch ("../json/youtude.json");
+    return reponse.json();
 }
 
-youtube()
+const videoContainer = document.querySelector(".video-container");
+
+async function loadVideos() {
+const n = await youtube()
+console.log(n['1']['title']);}
+
+loadVideos()

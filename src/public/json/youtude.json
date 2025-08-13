@@ -1,3 +1,9 @@
 {
-    "1": "<a href=\"\"><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ybt2jhCQ3lA?si=ds9m4DVjjZuF3Cip\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe></a>"
+    "1": [
+        {
+            "title": "English Learning Tips",
+            "url": "https://www.youtube.com/embed/ybt2jhCQ3lA?si=ds9m4DVjjZuF3Cip",
+            "image" : "/images/thumbnail.jpeg"
+        }
+    ]
 }
