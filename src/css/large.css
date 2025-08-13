@@ -28,6 +28,21 @@ dialog {
   left: 50%;
   transform: translate(-50%, -50%);
 } 
+
+
+.form-select {
+  width: 150px !important;
+  & option{
+    padding: 6rem;
+  }
 }
 
+.grammar{
+  padding: 0.3rem;
+  width: 90%;
+  min-height: 100px;
+}
 
+select option {
+  font-size: 16px; }
+}
