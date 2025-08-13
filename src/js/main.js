@@ -19,12 +19,12 @@ let currentDate = date.toISOString().split('T')[0];
 console.log(currentDate);
 
 function getDate(){
-  return localStorage.getItem("date") || currentDate;
+  return localStorage.getItem("date");
 }
 function setDate(){
-  let date = new Date();
-  let urrentDate = date.toISOString().split('T')[0];
-  localStorage.setItem("date", urrentDate);
+  let date = new Date(); // Set a fixed date for testing
+  let today = date.toISOString().split('T')[0];
+  localStorage.setItem("date", today);
 }
 if (getDate() == currentDate) {
   const todayWord = localStorage.getItem("todayWord");
@@ -39,6 +39,10 @@ else {
   words.getWordInfo(word,word)
   setDate();
 }
+
+
+
+
 
 
 
