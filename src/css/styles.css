@@ -7,8 +7,9 @@
 }*/
 :root{
   --primary-color: #ffffff;
-  --secondary-color: #242323;
+  --secondary-color: #131212ec;
   --accent : #40409c;
+  --response : #5d5dc5d8;
 }
 
 
@@ -156,7 +157,7 @@ iframe {
   float: right;
 }
 
-form{
+.grammarForm{
   margin: 1rem;
   border: 3px solid black;
   border-radius: 10px;
@@ -174,11 +175,18 @@ form{
 .grammar-submit{
   margin: 0.5rem 0 0.5rem 1rem;
   padding: 0.5rem;
-  background-color: var(--accent);
+  background-color: rgba(0, 0, 0, 0.479);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+.response{
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.479);
+  color: var(--primary-color);
+  border-radius: 5px;
 }
 
 
@@ -186,6 +194,29 @@ footer{
   width: 100%;
   padding: 1rem 0 1rem 1rem;
   color: var(--primary-color);
-  background-color: var(--secondary-color);
+  background-color : var(--secondary-color);
+  & a{
+    color: var(--primary-color);
+  }
 }
+
+.quiz{
+  margin: 1rem;
+  padding: 1rem;
+  background-color: rgb(109, 109, 109);
+  color: var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;}
+
+
+.ebody{
+  overflow: hidden;
+}
+.video-container{
+      height: 100vh; ; /* Full viewport height */
+      overflow-y: scroll; /* Enable vertical scroll */
+      scrollbar-width: thin;
+}
+
 

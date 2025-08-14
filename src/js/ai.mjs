@@ -6,16 +6,33 @@ export default class openAiClient {
     this.openai = new OpenAI({apiKey: apiKey, dangerouslyAllowBrowser: true});
   }
 
-  async newWord(){
+
+  performTasks(){
+    const grammarBtn = document.querySelector('.grammar-submit');
+    grammarBtn.addEventListener('click',(event)=>{
+      event.preventDefault();
+      const task = document.querySelector('.task').value;
+      const content = document.querySelector('.grammar').value;
+      this.newWord(task, content)
+    })
+
+
+
+
+  }
+  async newWord(task, content){
       const response = await this.openai.responses.create({
         model: "gpt-4o-mini",
-        input: `output a single word without a fullstop`,
+        input: `${task} ${content}`,
         store: true,
       });
-      
+      document.querySelector('.response').innerHTML = response.output_text;
       return response
   }
+
+
 }
+
 
 
 /*
